@@ -16,15 +16,14 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'travisjeffery/vim-auto-mkdir'
 Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
-Plug 'yuttie/comfortable-motion.vim'
 Plug 'mileszs/ack.vim'
-"Plug 'tmhedberg/SimpylFold'
+"Plug 'yuttie/comfortable-motion.vim'
+"Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
@@ -40,7 +39,10 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 "generic settings
 syntax on
-colorscheme predawn
+colorscheme hybrid_material
+"colorscheme lucius
+"colorscheme hybrid
+"colorscheme gruvbox
 set backspace=2
 set clipboard=unnamed
 set encoding=utf-8
@@ -53,10 +55,11 @@ set nowritebackup
 set number
 set pastetoggle=<leader>p
 set splitright
-hi NonText ctermbg = none
-hi Normal ctermbg  = none
-"set list lcs=trail:·
-"set list lcs=tab:␉\ \,trail:·
+set cursorline
+hi NonText ctermbg    = none
+hi Normal ctermbg     = none
+hi CursorLine ctermbg = 237
+hi LineNr ctermfg=grey ctermbg=black
 
 "indentLine
 let g:indentLine_char = '|'
@@ -85,7 +88,7 @@ let g:syntastic_quiet_messages           =  {
 
 "lightline
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'seoul256',
       \ 'active' : {
       \   'left' : [ [ 'mode', 'paste' ],
       \              [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
@@ -113,7 +116,6 @@ function! s:syntastic()
   call lightline#update()
 endfunction
 
-"test
-let g:multi_cursor_quit_key='<C-c>'
-nnoremap <C-c> :call multiple_cursors#quit()<CR>
+"let g:multi_cursor_quit_key='<C-c>'
+"nnoremap <C-c> :call multiple_cursors#quit()<CR>
 

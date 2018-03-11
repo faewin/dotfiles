@@ -4,6 +4,7 @@ alias ll="ls -lahG"
 alias python="python2"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+POWERLEVEL9K_COLOR_SCHEME='light'
 POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=""
